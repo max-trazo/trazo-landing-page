@@ -71,27 +71,30 @@ function StarIcon() {
   );
 }
 
-// Hero Header Section
-function HeroHeaderSection() {
-
-
+// Sticky Navbar Component
+function StickyNavbar() {
   return (
-    <div className="bg-white content-stretch flex flex-col isolate items-center justify-start relative size-full">
-      {/* Header Navigation */}
-      <div className="block h-20 overflow-visible relative shrink-0 w-full z-[3]">
-        <div className="absolute content-stretch flex flex-col h-20 items-center justify-center left-0 right-0 top-0">
-          <div className="box-border content-stretch flex gap-4 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
-            <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
-              <Image src="/images/trazo_logo.png" alt="Trazo Logo" width={80} height={40} className="h-10 w-auto" />
-            </div>
-            <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px shrink-0" />
-            <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
-              <DemoBookButton />
-              <JoinWaitlist hasForm={false} text="Join our Waitlist" />
-            </div>
+    <div className="fixed top-0 left-0 right-0 z-50 h-20 bg-white/80 backdrop-blur-md border-b border-white/20">
+      <div className="content-stretch flex flex-col h-20 items-center justify-center">
+        <div className="box-border content-stretch flex gap-4 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
+          <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
+            <Image src="/images/trazo_logo.png" alt="Trazo Logo" width={80} height={40} className="h-10 w-auto" />
+          </div>
+          <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px shrink-0" />
+          <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
+            <DemoBookButton />
+            <JoinWaitlist hasForm={false} text="Join our Waitlist" />
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+// Hero Header Section
+function HeroHeaderSection() {
+  return (
+    <div className="bg-white content-stretch flex flex-col isolate items-center justify-start relative size-full pt-20">
 
       {/* Main Hero Content */}
       <div className="box-border content-stretch flex flex-col gap-16 items-center justify-center pb-24 pt-16 px-0 relative shrink-0 w-full z-[2]">
@@ -540,6 +543,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
+      <StickyNavbar />
       <HeroHeaderSection />
       <FeaturesSection />
       <TestimonialSection />

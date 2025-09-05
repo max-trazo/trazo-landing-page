@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Video from 'next-video';
- 
+import BackgroundVideo from 'next-video/background-video';
+import { DemoBookButton } from "@/components/DemoBookButton";
+
 
 // Background Pattern Component
 function BackgroundPattern() {
@@ -76,13 +78,7 @@ function HeroHeaderSection() {
             </div>
             <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px shrink-0" />
             <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
-              <button className="bg-white relative rounded-[8px] shrink-0 border border-[#d5d7da] shadow-sm">
-                <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-4 py-2.5 relative">
-                  <div className="font-semibold text-[#414651] text-[16px]">
-                    Book a Demo
-                  </div>
-                </div>
-              </button>
+                <DemoBookButton/>
               <button className="bg-[#0a0d12] relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm">
                 <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-4 py-2.5 relative">
                   <div className="font-semibold text-white text-[16px]">
@@ -136,7 +132,7 @@ function HeroHeaderSection() {
           {/* Right Video Content */}
           <div className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg">
               
-              <Video className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg" src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} />
+              <BackgroundVideo className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg" src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} />
               {/* <video className="absolute bg-[rgba(0,0,0,0.1)] content-stretch flex inset-0 items-center justify-center rounded-lg" width="320" height="240" controls preload="none">
                 <source src="/videos/trazo_gif.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -245,7 +241,7 @@ function FeaturesSection() {
                     alt="Unified Project Workspaces Dashboard" 
                     width={753} 
                     height={502}
-                    className="h-[501.961px] w-[752.941px] object-cover rounded-[24px]"
+                    className="h-[1918] w-[940px] object-cover rounded-[24px]"
                   />
                 </div>
               </div>

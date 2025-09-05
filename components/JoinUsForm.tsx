@@ -15,7 +15,19 @@ export function JoinUsForm({ type }: JoinUsFormProps) {
 
     const text = type === "waitlist" ? "Join Our Waitlist" : type === "beta" ? "Join Our Beta" : "Subscribe to Our Newsletter";
 
+    const isValidEmail = (email: string) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
     const handleSubmit = async () => {
+        if (!isValidEmail(email)) {
+            setError("Invalid email!");
+            setTimeout(() => {
+                setError("");
+            }, 3000);
+            return;
+        }
+
         setIsLoading(true);
         try {
             if (type === "waitlist") {
@@ -26,6 +38,11 @@ export function JoinUsForm({ type }: JoinUsFormProps) {
                 await sendNewsletterEmail(email);
             }
             setSuccess(true);
+
+            setTimeout(() => {
+                setSuccess(false);
+            }, 5000);
+            setEmail("");
         } catch (error: any) {
             setError(error.message);
         }

@@ -2,6 +2,8 @@ import Image from "next/image";
 import Video from 'next-video';
 import BackgroundVideo from 'next-video/background-video';
 import { DemoBookButton } from "@/components/DemoBookButton";
+import { JoinWaitlist } from "@/components/JoinWaitlist";
+import { JoinUsForm } from "@/components/JoinUsForm";
 
 
 // Background Pattern Component
@@ -79,13 +81,7 @@ function HeroHeaderSection() {
             <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px shrink-0" />
             <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
                 <DemoBookButton/>
-              <button className="bg-[#0a0d12] relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm">
-                <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-4 py-2.5 relative">
-                  <div className="font-semibold text-white text-[16px]">
-                    Join our Waitlist
-                  </div>
-                </div>
-              </button>
+                <JoinWaitlist text="Join our Waitlist"/>
             </div>
           </div>
         </div>
@@ -106,27 +102,7 @@ function HeroHeaderSection() {
             </div>
 
             {/* Email Capture */}
-            <div className="content-stretch flex gap-4 items-start justify-start max-w-[480px] relative shrink-0 w-full">
-              <div className="box-border content-stretch flex flex-col gap-1.5 items-start justify-start p-0 relative shrink-0 w-[335px]">
-                <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-3.5 py-3 relative rounded-[8px] shrink-0 w-full border border-[#d5d7da] shadow-sm">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="basis-0 grow font-normal text-[#717680] text-[16px] leading-[24px] outline-none bg-transparent"
-                  />
-                </div>
-                <p className="font-normal text-[#535862] text-[14px] leading-[20px] w-full">
-                  We care about your data in our <span className="underline">privacy policy</span>.
-                </p>
-              </div>
-              <button className="bg-[#0a0d12] relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm">
-                <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-[18px] py-3 relative">
-                  <div className="font-semibold text-white text-[16px] leading-[24px]">
-                    Join Our Waitlist
-                  </div>
-                </div>
-              </button>
-            </div>
+            <JoinUsForm type="waitlist" />
           </div>
 
           {/* Right Video Content */}
@@ -162,7 +138,7 @@ function HeroHeaderSection() {
 // Features Section
 function FeaturesSection() {
   return (
-    <div className="bg-white box-border content-stretch flex flex-col gap-24 items-center justify-start pb-24 pt-0 px-0 relative size-full">
+    <div className="bg-white box-border content-stretch flex flex-col gap-24 items-center justify-start pb-24 pt-0 px-0 relative size-full overflow-visible">
       {/* Header */}
       <div className="box-border content-stretch flex flex-col gap-8 items-start justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
         <div className="content-stretch flex flex-col gap-8 items-center justify-start relative shrink-0 w-full">
@@ -183,7 +159,7 @@ function FeaturesSection() {
       </div>
 
       {/* Feature 1 - Unified Project Workspaces */}
-      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
+      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full overflow-visible">
         <div className="basis-0 content-stretch flex flex-col gap-8 grow items-start justify-start min-h-px min-w-px relative shrink-0">
           <div className="content-stretch flex flex-col gap-5 items-start justify-start relative shrink-0 w-full">
             <FeaturedIcon>
@@ -231,17 +207,17 @@ function FeaturesSection() {
         </div>
 
         {/* Feature Image */}
-        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0">
-          <div className="absolute bg-white box-border content-stretch flex flex-col items-start justify-start left-0 p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg">
-            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-clip p-[2.51px] relative rounded-[28px] shrink-0">
-              <div className="bg-neutral-50 relative rounded-[24px] shrink-0 border border-[#e9eaeb]">
-                <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative">
+        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0 overflow-visible">
+          <div className="relative w-[753px] h-[502px] bg-white box-border content-stretch flex flex-col items-start justify-start left-0 p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg overflow-visible">
+            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
+              <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible">
+                <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible left-0">
                   <Image 
                     src="/images/dashboard_old.png" 
                     alt="Unified Project Workspaces Dashboard" 
-                    width={753} 
-                    height={502}
-                    className="h-[1918] w-[940px] object-cover rounded-[24px]"
+                    width={1981} 
+                    height={940}
+                    className="object-cover object-left rounded-[24px] w-[900px] h-[502px]"
                   />
                 </div>
               </div>
@@ -251,19 +227,19 @@ function FeaturesSection() {
       </div>
 
       {/* Feature 2 - Collaborative Boards */}
-      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
+      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full overflow-visible">
         {/* Feature Image */}
-        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0">
-          <div className="absolute bg-white box-border content-stretch flex flex-col items-start justify-start right-[0.02px] p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg">
-            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-clip p-[2.51px] relative rounded-[28px] shrink-0">
-              <div className="bg-neutral-50 relative rounded-[24px] shrink-0 border border-[#e9eaeb]">
-                <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative">
+        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0 overflow-visible">
+          <div className="absolute right-0 w-[753px] h-[502px] bg-white box-border content-stretch flex flex-col items-start justify-start p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg overflow-visible">
+            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
+              <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible -left-[147px]">
+                <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible right-0">
                   <Image 
                     src="/images/tasks_cropped.png" 
                     alt="Collaborative Boards and Commenting" 
                     width={753} 
                     height={502}
-                    className="h-[501.961px] w-[752.941px] object-cover rounded-[24px]"
+                    className="object-cover object-right rounded-[24px] w-[900px] h-[502px]"
                   />
                 </div>
               </div>
@@ -319,7 +295,7 @@ function FeaturesSection() {
       </div>
 
       {/* Feature 3 - Version Control */}
-      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
+      <div className="box-border content-stretch flex gap-24 items-center justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full overflow-visible">
         <div className="basis-0 content-stretch flex flex-col gap-8 grow items-start justify-start min-h-px min-w-px relative shrink-0">
           <div className="content-stretch flex flex-col gap-5 items-start justify-start relative shrink-0 w-full">
             <FeaturedIcon>
@@ -359,17 +335,17 @@ function FeaturesSection() {
         </div>
 
         {/* Feature Image */}
-        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0">
-          <div className="absolute bg-white box-border content-stretch flex flex-col items-start justify-start left-0 p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg">
-            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-clip p-[2.51px] relative rounded-[28px] shrink-0">
-              <div className="bg-neutral-50 relative rounded-[24px] shrink-0 border border-[#e9eaeb]">
-                <div className="content-stretch flex flex-col items-start justify-start overflow-clip relative">
+        <div className="basis-0 grow h-[512px] min-h-px min-w-px relative shrink-0 overflow-visible">
+          <div className="relative w-[753px] h-[502px] bg-white box-border content-stretch flex flex-col items-start justify-start left-0 p-[2.51px] rounded-[32px] top-0 border border-[rgba(0,0,0,0.08)] shadow-lg overflow-visible">
+            <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
+              <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible">
+                <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible left-0">
                   <Image 
                     src="/images/version_controll.png" 
                     alt="Visual First Version Control & Comparison" 
                     width={753} 
                     height={502}
-                    className="h-[501.961px] w-[752.941px] object-cover rounded-[24px]"
+                    className="object-cover object-left rounded-[24px] w-[900px] h-[502px]"
                   />
                 </div>
               </div>
@@ -395,24 +371,7 @@ function CtaSection() {
               And be among the first to shape the future of design collaboration.
             </p>
           </div>
-          <div className="content-stretch flex gap-3 items-start justify-start relative shrink-0">
-            <div className="box-border content-stretch flex flex-col gap-1.5 items-start justify-start p-0 relative shrink-0">
-              <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-3 py-2 relative rounded-[8px] shrink-0 w-80 border border-[#d5d7da] shadow-sm">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="basis-0 grow font-normal text-[#717680] text-[16px] leading-[24px] outline-none bg-transparent"
-                />
-              </div>
-            </div>
-            <button className="bg-[#0a0d12] relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm">
-              <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-[18px] py-3 relative">
-                <div className="font-semibold text-white text-[16px] leading-[24px]">
-                  Join Beta
-                </div>
-              </div>
-            </button>
-          </div>
+          <JoinUsForm type="beta" />
         </div>
       </div>
     </div>
@@ -473,24 +432,7 @@ function NewsletterCtaSection() {
               Be the first to know about releases and industry news and insights.
             </p>
           </div>
-          <div className="content-stretch flex gap-4 items-start justify-start relative shrink-0 w-[480px]">
-            <div className="basis-0 box-border content-stretch flex flex-col gap-1.5 grow items-start justify-start min-h-px min-w-px p-0 relative shrink-0">
-              <div className="bg-white box-border content-stretch flex gap-2 items-center justify-start px-3.5 py-2.5 relative rounded-[8px] shrink-0 w-full border border-[#d5d7da] shadow-sm">
-                <input
-                  type="email"
-                  placeholder="olivia@untitledui.com"
-                  className="basis-0 grow font-normal text-[#717680] text-[16px] leading-[24px] outline-none bg-transparent"
-                />
-              </div>
-            </div>
-            <button className="bg-[#0a0d12] relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm">
-              <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-[18px] py-3 relative">
-                <div className="font-semibold text-white text-[16px] leading-[24px]">
-                  Subscribe
-                </div>
-              </div>
-            </button>
-          </div>
+          <JoinUsForm type="newsletter" />
         </div>
       </div>
     </div>

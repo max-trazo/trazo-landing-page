@@ -247,7 +247,7 @@ export const EmailTemplates = {
                     Thank you for your interest in Trazo
                 </div>
                 <div class="footer-text">
-                    © 2025 SiteStack Technologies, Inc. All rights reserved.
+                    © 2025 Trazo, Inc. All rights reserved.
                 </div>
                 <div style="margin-top: 16px;">
                     <a href="#" class="footer-links">Privacy Policy</a>
@@ -481,7 +481,7 @@ export const EmailTemplates = {
                     Thank you for your interest in Trazo
                 </div>
                 <div class="footer-text">
-                    © 2025 SiteStack Technologies, Inc. All rights reserved.
+                    © 2025 Trazo, Inc. All rights reserved.
                 </div>
                 <div style="margin-top: 16px;">
                     <a href="#" class="footer-links">Privacy Policy</a>
@@ -714,7 +714,7 @@ export const EmailTemplates = {
                     Thank you for your interest in Trazo
                 </div>
                 <div class="footer-text">
-                    © 2025 SiteStack Technologies, Inc. All rights reserved.
+                    © 2025 Trazo, Inc. All rights reserved.
                 </div>
                 <div style="margin-top: 16px;">
                     <a href="#" class="footer-links">Privacy Policy</a>

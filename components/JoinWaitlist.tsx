@@ -37,7 +37,7 @@ export function JoinWaitlist({ hasForm, text, loading, error, onClick, success }
     
     return (
         <button 
-            onClick={hasForm ? onClick : scrollToWaitlistForm} 
+            onClick={hasForm ? loading ? () => {} : onClick : scrollToWaitlistForm} 
             className={`
                 ${error ? 'bg-red-500 hover:bg-red-600' : success ? 'bg-green-600 hover:bg-green-700' : 'bg-[#0a0d12] hover:bg-[#1a1d22]'} 
                 hover:cursor-pointer relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm

@@ -235,7 +235,7 @@ function FeaturesSection() {
               <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible -left-[147px]">
                 <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible right-0">
                   <Image 
-                    src="/images/tasks_cropped.png" 
+                    src="/images/comments_new.png" 
                     alt="Collaborative Boards and Commenting" 
                     width={753} 
                     height={502}
@@ -341,7 +341,7 @@ function FeaturesSection() {
               <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible">
                 <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible left-0">
                   <Image 
-                    src="/images/version_controll.png" 
+                    src="/images/versions_new.png" 
                     alt="Visual First Version Control & Comparison" 
                     width={753} 
                     height={502}

@@ -6,9 +6,9 @@ import 'ldrs/react/Hourglass.css'
 
 const Loading = () => {
     return (
-        <div className='flex gap-2.5 items-center justify-center' >
+        <div className='flex gap-2.5 items-center justify-center transition-all duration-300 ease-out' >
         <Hourglass
-            size="14"
+            size="24"
             bgOpacity="0.1"
             speed="1.75"
             color="white"
@@ -20,11 +20,26 @@ const Loading = () => {
 
 export function JoinWaitlist({ text, loading, error, onClick, success }: { text: string, loading?: boolean, error?: string, onClick?: () => void, success?: boolean }) {
     return (
-        <button onClick={onClick} className={`${error ? 'bg-red-500' : success ? 'bg-green-600' : 'bg-[#0a0d12]'} hover:cursor-pointer relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm`}>
+        <button 
+            onClick={onClick} 
+            className={`
+                ${error ? 'bg-red-500 hover:bg-red-600' : success ? 'bg-green-600 hover:bg-green-700' : 'bg-[#0a0d12] hover:bg-[#1a1d22]'} 
+                hover:cursor-pointer relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm
+                transition-all duration-300 ease-out
+                hover:shadow-lg hover:-translate-y-0.5
+                active:translate-y-0 active:shadow-sm
+                transform
+            `}
+        >
             <div className="box-border content-stretch flex gap-1.5 items-center justify-center overflow-clip px-4 py-2.5 relative">
-                <div className="font-semibold text-white text-[16px]">
-                    {error ? error : success ? 'Success!' : loading ? <Loading/>
-                        : text}
+                <div className={`
+                    font-semibold text-white text-[16px] 
+                    transition-all duration-300 ease-out
+                    ${loading ? 'opacity-90' : 'opacity-100'}
+                `}>
+                    <span className="transition-all duration-300 ease-out">
+                        {error ? error : success ? 'Success!' : loading ? <Loading/> : text}
+                    </span>
                 </div>
             </div>
         </button>

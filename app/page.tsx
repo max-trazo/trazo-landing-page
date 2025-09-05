@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Video from 'next-video';
 import BackgroundVideo from 'next-video/background-video';
 import { DemoBookButton } from "@/components/DemoBookButton";
 import { JoinWaitlist } from "@/components/JoinWaitlist";
 import { JoinUsForm } from "@/components/JoinUsForm";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 
 // Background Pattern Component
@@ -402,7 +406,7 @@ function TestimonialSection() {
                   ))}
                 </div>
                 <blockquote className="font-medium text-[#181d27] text-[36px] tracking-[-0.72px] leading-[44px]">
-                  "Trazo has saved us thousands of hours of work. We're able to get from the first idea of a drawing to its completion in half the time."
+                  "Trazo will save us over 400 hours of work this year. Can’t wait to focus more on designing instead of juggling design files over email or text, and wasting time digging for them in cluttered communication channels."
                 </blockquote>
               </div>
               <div className="content-stretch flex flex-col gap-1 items-start justify-start relative shrink-0 w-full">
@@ -503,7 +507,7 @@ function Footer() {
       <div className="box-border content-stretch flex flex-col gap-8 items-start justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
         <div className="box-border content-center flex flex-wrap gap-8 items-center justify-start pb-0 pt-8 px-0 relative shrink-0 w-full border-t border-[#22262f]">
           <div className="font-normal text-[#94979c] text-[16px] leading-[24px]">
-            © 2025 Trazo, Inc. All rights reserved.
+            © 2025 SiteStack, Inc. All rights reserved.
           </div>
         </div>
       </div>
@@ -512,12 +516,35 @@ function Footer() {
 }
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const detectMobile = () => {
+      // Check screen width
+      const isMobileWidth = window.innerWidth <= 768;
+      
+      // Check user agent for mobile devices
+      const isMobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      // Check for touch screen
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      
+      return isMobileWidth || (isMobileUserAgent && isTouchDevice);
+    };
+
+    // Only run on client side
+    if (typeof window !== 'undefined' && detectMobile()) {
+      router.push('/mobile');
+    }
+  }, [router]);
+
   return (
     <div className="min-h-screen">
       <HeroHeaderSection />
       <FeaturesSection />
-      <CtaSection />
       <TestimonialSection />
+      
+      <CtaSection />
       <NewsletterCtaSection />
       <Footer />
     </div>

@@ -91,11 +91,11 @@ function HeroHeaderSection() {
 
       {/* Main Hero Content */}
       <div className="box-border content-stretch flex flex-col gap-16 items-center justify-center pb-24 pt-16 px-0 relative shrink-0 w-full z-[2]">
-        <div className="box-border content-stretch flex gap-20 isolate items-center justify-center max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
+        <div className="box-border content-stretch flex gap-24 isolate items-center justify-center max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
           {/* Left Content */}
           <div className="basis-0 content-stretch flex flex-col gap-12 grow items-start justify-start min-h-px min-w-px relative shrink-0 z-[2]">
             <div className="content-stretch flex flex-col gap-6 items-start justify-center leading-[0] not-italic relative shrink-0 w-full">
-              <h1 className="font-semibold min-w-[768px] relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-full leading-[60px]">
+              <h1 className="font-semibold min-w-[700px] relative shrink-0 text-[#181d27] text-[48px] tracking-[-0.96px] w-full leading-[60px]">
                 The design canvas where versions, feedback, and tasks live together.
               </h1>
               <p className="font-normal max-w-[560px] relative shrink-0 text-[#535862] text-[20px] w-full leading-[30px]">
@@ -110,13 +110,18 @@ function HeroHeaderSection() {
           </div>
 
           {/* Right Video Content */}
-          <div className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg">
-
-            <BackgroundVideo className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg" src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} />
-            {/* <video className="absolute bg-[rgba(0,0,0,0.1)] content-stretch flex inset-0 items-center justify-center rounded-lg" width="320" height="240" controls preload="none">
-                <source src="/videos/trazo_gif.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video> */}
+          <div className="">
+            <div className="h-[640px] pl-24 max-w-[580px] rounded-lg overflow-hidden ">
+              <BackgroundVideo 
+                className="w-full rounded-lg" 
+                style={{
+                  height: '120%',
+                  marginTop: '-10%',
+                  objectFit: 'cover'
+                }}
+                src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} 
+              />
+            </div>
 
             {/* Hand-drawn arrow */}
             {/* <div className="absolute bottom-[-10.66px] flex h-[296.43px] items-center justify-center left-[-130.6px] w-[301.528px]">

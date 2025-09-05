@@ -65,7 +65,7 @@ export function JoinUsForm({ type }: JoinUsFormProps) {
                     We care about your data in our <span className="underline">privacy policy</span>.
                 </p>
             </div>
-            <JoinWaitlist text={text} onClick={handleSubmit} loading={isLoading} error={error} success={success} />
+            <JoinWaitlist hasForm={true} text={text} onClick={handleSubmit} loading={isLoading} error={error} success={success} />
         </div>
     )
 }

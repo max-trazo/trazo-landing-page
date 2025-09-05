@@ -69,6 +69,8 @@ function StarIcon() {
 
 // Hero Header Section
 function HeroHeaderSection() {
+
+
   return (
     <div className="bg-white content-stretch flex flex-col isolate items-center justify-start relative size-full">
       {/* Header Navigation */}
@@ -80,8 +82,8 @@ function HeroHeaderSection() {
             </div>
             <div className="basis-0 content-stretch flex gap-5 grow items-center justify-start min-h-px min-w-px shrink-0" />
             <div className="content-stretch flex gap-3 items-center justify-start relative shrink-0">
-                <DemoBookButton/>
-                <JoinWaitlist text="Join our Waitlist"/>
+              <DemoBookButton />
+              <JoinWaitlist hasForm={false} text="Join our Waitlist" />
             </div>
           </div>
         </div>
@@ -102,14 +104,16 @@ function HeroHeaderSection() {
             </div>
 
             {/* Email Capture */}
-            <JoinUsForm type="waitlist" />
+            <div id="hero-waitlist-form">
+              <JoinUsForm type="waitlist" />
+            </div>
           </div>
 
           {/* Right Video Content */}
           <div className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg">
-              
-              <BackgroundVideo className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg" src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} />
-              {/* <video className="absolute bg-[rgba(0,0,0,0.1)] content-stretch flex inset-0 items-center justify-center rounded-lg" width="320" height="240" controls preload="none">
+
+            <BackgroundVideo className="basis-0 bg-center bg-cover bg-no-repeat grow h-[640px] max-w-[560px] min-h-px min-w-px relative shrink-0 z-[1] bg-gray-200 rounded-lg" src={"https://qckoojnshbvfpwgafdyu.supabase.co/storage/v1/object/public/landing_page/trazo_gif.mp4"} />
+            {/* <video className="absolute bg-[rgba(0,0,0,0.1)] content-stretch flex inset-0 items-center justify-center rounded-lg" width="320" height="240" controls preload="none">
                 <source src="/videos/trazo_gif.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video> */}
@@ -212,10 +216,10 @@ function FeaturesSection() {
             <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
               <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible">
                 <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible left-0">
-                  <Image 
-                    src="/images/dashboard_old.png" 
-                    alt="Unified Project Workspaces Dashboard" 
-                    width={1981} 
+                  <Image
+                    src="/images/dashboard_old.png"
+                    alt="Unified Project Workspaces Dashboard"
+                    width={1981}
                     height={940}
                     className="object-cover object-left rounded-[24px] w-[900px] h-[502px]"
                   />
@@ -234,11 +238,11 @@ function FeaturesSection() {
             <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
               <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible -left-[147px]">
                 <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible right-0">
-                  <Image 
-                    src="/images/comments_new.png" 
-                    alt="Collaborative Boards and Commenting" 
-                    width={753} 
-                    height={502}
+                  <Image
+                    src="/images/comments_new.png"
+                    alt="Collaborative Boards and Commenting"
+                    width={1981}
+                    height={940}
                     className="object-cover object-right rounded-[24px] w-[900px] h-[502px]"
                   />
                 </div>
@@ -340,11 +344,11 @@ function FeaturesSection() {
             <div className="bg-white box-border content-stretch flex flex-col items-start justify-start overflow-visible p-[2.51px] relative rounded-[28px] shrink-0">
               <div className="bg-neutral-50 w-[900px] h-[502px] relative rounded-[24px] shrink-0 border border-[#e9eaeb] overflow-visible">
                 <div className="content-stretch w-[900px] h-[502px] absolute flex flex-col items-start justify-start overflow-visible left-0">
-                  <Image 
-                    src="/images/versions_new.png" 
-                    alt="Visual First Version Control & Comparison" 
-                    width={753} 
-                    height={502}
+                  <Image
+                    src="/images/versions_new.png"
+                    alt="Visual First Version Control & Comparison"
+                    width={1981}
+                    height={940}
                     className="object-cover object-left rounded-[24px] w-[900px] h-[502px]"
                   />
                 </div>

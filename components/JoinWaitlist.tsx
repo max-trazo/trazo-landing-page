@@ -18,10 +18,26 @@ const Loading = () => {
 }
 
 
-export function JoinWaitlist({ text, loading, error, onClick, success }: { text: string, loading?: boolean, error?: string, onClick?: () => void, success?: boolean }) {
+export function JoinWaitlist({ hasForm, text, loading, error, onClick, success }: { hasForm: boolean, text: string, loading?: boolean, error?: string, onClick?: () => void, success?: boolean }) {
+    const scrollToWaitlistForm = () => {
+        const formElement = document.getElementById('hero-waitlist-form');
+        if (formElement) {
+          formElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'center'
+          });
+          
+          // Add highlight effect
+          const inputElement = formElement.querySelector('input[type="email"]') as HTMLElement;
+          if (inputElement) {
+            inputElement.focus();
+          }
+        }
+      };
+    
     return (
         <button 
-            onClick={onClick} 
+            onClick={hasForm ? onClick : scrollToWaitlistForm} 
             className={`
                 ${error ? 'bg-red-500 hover:bg-red-600' : success ? 'bg-green-600 hover:bg-green-700' : 'bg-[#0a0d12] hover:bg-[#1a1d22]'} 
                 hover:cursor-pointer relative rounded-[8px] shrink-0 border-2 border-[rgba(255,255,255,0.12)] shadow-sm

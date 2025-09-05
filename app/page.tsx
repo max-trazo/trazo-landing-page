@@ -393,7 +393,7 @@ function TestimonialSection() {
                   ))}
                 </div>
                 <blockquote className="font-medium text-[#181d27] text-[36px] tracking-[-0.72px] leading-[44px]">
-                  "Untitled has saved us thousands of hours of work. We're able to attract talent and close hires much faster."
+                  "Trazo has saved us thousands of hours of work. We're able to get from the first idea of a drawing to its completion in half the time."
                 </blockquote>
               </div>
               <div className="content-stretch flex flex-col gap-1 items-start justify-start relative shrink-0 w-full">
@@ -494,7 +494,7 @@ function Footer() {
       <div className="box-border content-stretch flex flex-col gap-8 items-start justify-start max-w-[1280px] px-8 py-0 relative shrink-0 w-full">
         <div className="box-border content-center flex flex-wrap gap-8 items-center justify-start pb-0 pt-8 px-0 relative shrink-0 w-full border-t border-[#22262f]">
           <div className="font-normal text-[#94979c] text-[16px] leading-[24px]">
-            © 2025 SiteStack Technologies, Inc. All rights reserved.
+            © 2025 Trazo, Inc. All rights reserved.
           </div>
         </div>
       </div>
